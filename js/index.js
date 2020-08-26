@@ -1,4 +1,4 @@
-zip.workerScriptsPath = "/lib/";
+zip.workerScriptsPath = "./lib/";
 
 var fileInput = document.getElementById("fileInput"),
     input = document.getElementById("input"),
