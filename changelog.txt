@@ -1,4 +1,9 @@
 v1.0.0
 
+Working on:
+- Asset searching filters
+- Mobile UI
+- Model/Audio searching
+
 Update 1.0.0:
 - Initial Release
