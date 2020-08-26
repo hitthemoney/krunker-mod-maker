@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171494631-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-171494631-1');
+    </script>
+    <!-- End Google Analytics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krunker Mod Maker</title>
+    <meta name="description" content="Make krunker mods, on the web!">
+    <meta name="keywords" content="Krunker, Krunker modding, krunker mods, krunker mods web, krunker mod maker">
+    <link rel="stylesheet" href="/css/main.css">
+    <script type="text/javascript" src="/lib/zip.js"></script>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Krunker Mod Maker">
+    <meta name="og:title" content="Krunker Mod Maker">
+    <meta name="og:url" content="https://hitthemoney.com/skin-maker-skins">
+    <meta name="og:site_name" content="Krunker Mod Maker">
+    <meta name="og:type" content="website">
+</head>
+
+<body>
+    <div id="botTop">
+        <div id="title">
+            <span id="mainTitle" class="text">Krunker Mod Maker</span>
+            <div id="info">
+                <a href="https://hitthemoney.com">hitthemoney</a><span class="text"> |</span>
+                <a style="cursor: pointer;" onclick="showChangelog()" id="version">v1.0.0</a>
+            </div>
+        </div>
+    </div>
+    <div style="position: absolute; top: 12px; left: 12px;">
+        <div id="holder1"><input placeholder="Type Krunker Mod Path" id="input"><button
+                onclick="fileInput.click()">Upload
+                File</button><button onclick="mainZip.add(fileInput.files[0], input.value)">Add to Mod</button>
+            <input id="fileInput" accept="image/png, audio/mp3, model/obj" style="display: none;" type="file">
+        </div>
+        <div id="zipContents">
+            <h1>Mod Content</h1>
+            <hr>
+            <div style="overflow: auto; height: max-content;">
+                <ul id="zipCList">
+
+                </ul>
+            </div>
+        </div>
+        <button id="downloadBtn" onclick="mainZip.download()">Download Mod</button><button id="clearBtn"
+            onclick="mainZip.clear()">Clear Mod</button>
+    </div>
+    <div id="pathFinder">
+        <input id="pInput" onkeydown="updatePF()" placeholder="Krunker skin name">
+        <hr>
+        <div>
+            <div id="pSkins" style="overflow: auto; height: 280px;/*height: max-content;*/ border-radius: 5px;">
+
+            </div>
+        </div>
+        <!-- Filters Coming Soon -->
+        <div style="display: none !important;" id="filterDiv">Filters: <div
+                style="display: inline-block; position: relative; bottom: 5px;" id="options">
+                <select id="glow" onchange="updatePF()">
+                    <option value="all">No Emissive/Glow Filter</option>
+                    <option value="glow">Only Emissive/Glow</option>
+                    <option value="noglow">No Emissive/Glow</option>
+                </select></div>
+        </div>
+    </div>
+    <div style="display: none;" id="popupHolder">
+        <div onclick="hidePopup()" id="popupBack"></div>
+        <div id="changelogHolder" style="display: none;">
+            <span id="changelog"></span>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/data.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript" src="/js/krunker.js"></script>
+</body>
+
+</html>
